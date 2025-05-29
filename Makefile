@@ -30,6 +30,10 @@ ifeq ($(shell arch), aarch64)
   TARGET=ARM64
   TARGET_CFLAGS=
 endif
+ifeq ($(patsubst arm%,arm,$(shell arch)), arm)
+  TARGET=ARM
+  TARGET_CFLAGS=
+endif
 
 INCDIR=/usr/include/crash
 
